@@ -9,7 +9,6 @@ type Tache = {
   description: string;
   task: boolean;
 };
-/*Pourquoi??*/
 
 type Props = {
   tache: Tache;
@@ -21,15 +20,8 @@ type Props = {
 const TaskItem = ({ tache, onDelete, onToggle, onChangeStatut }: Props) => {
   return (
     <div>
-<<<<<<< HEAD
     
    
-=======
-    {/* Ce bouton est-il correct et à quoi sert ce bouton? */}
-      <button onClick={() => onToggle(tache.id)}>
-        {tache.bought ? "" : ""}
-      </button>
->>>>>>> 7f5872f1270389ab47472e1af38e42aeacd0e6cb
 
       <h3>{tache.input}</h3>
 

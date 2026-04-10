@@ -11,14 +11,8 @@ type Tache = {
   input: string;
   statut: Statut;
   description: string;
-<<<<<<< HEAD
   task: boolean;
 }
-=======
-  bought: boolean;
-};
-/*Encore ces types et aussi les noms des champs*/
->>>>>>> 7f5872f1270389ab47472e1af38e42aeacd0e6cb
 
 const TaskForm = ({ onAjouter }: Props) => {
   const [input, setInput] = useState("");
