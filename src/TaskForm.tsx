@@ -8,29 +8,30 @@ type Statut = "A faire" | "En cours" | "Terminé";
 
 type Tache = {
   id: number;
-  text: string;
+  input: string;
   statut: Statut;
   description: string;
-  bought: boolean;
-};
+  task: boolean;
+}
 
 const TaskForm = ({ onAjouter }: Props) => {
   const [input, setInput] = useState("");
   const [description, setDescription] = useState("");
   const [statut, setStatut] = useState<Statut>("A faire");
 
-  function handleSubmit(e: React.MouseEvent<HTMLButtonElement>) {
-    e.preventDefault();
+  function handleSubmit(e: React.FormEvent) {
+  e.preventDefault();
 
-    if (input.trim() === "") return;
-
-    onAjouter(input.trim(), description.trim(), statut);
-
-    setInput("");
-    setDescription("");
-    setStatut("A faire");
+  if (input.trim() === "") {
+    alert("Veuillez entrer un titre svp");
+    return;
   }
 
+  onAjouter(input, description, statut);
+
+  setInput("");
+  setDescription("");
+}
   return (
     <div>
       <h1 className="text-3xl font-bold text-center">

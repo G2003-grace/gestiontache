@@ -4,31 +4,29 @@ type Statut = "A faire" | "En cours" | "Terminé";
 
 type Tache = {
   id: number;
-  text: string;
+  input: string;
   statut: Statut;
   description: string;
-  bought: boolean;
+  task: boolean;
 };
 
 type Props = {
   tache: Tache;
   onDelete: () => void;
   onToggle: (id: number) => void;
+  onChangeStatut: (id: number) => void;
 };
 
-const TaskItem = ({ tache, onDelete, onToggle }: Props) => {
+const TaskItem = ({ tache, onDelete, onToggle, onChangeStatut }: Props) => {
   return (
     <div>
     
-      <button onClick={() => onToggle(tache.id)}>
-        {tache.bought ? "" : ""}
-      </button>
+   
 
-      <h3>{tache.text}</h3>
+      <h3>{tache.input}</h3>
 
       <p>{tache.description}</p>
 
-      
       <div className="flex items-center justify-between mt-2">
         <p>
           Statut :
@@ -36,8 +34,7 @@ const TaskItem = ({ tache, onDelete, onToggle }: Props) => {
             className={`badge badge-sm badge-soft
               ${
                 tache.statut === "A faire"
-
-                ? "badge-success"
+                  ? "badge-success"
                   : tache.statut === "En cours"
                   ? "badge-warning"
                   : "badge-primary"
@@ -46,6 +43,13 @@ const TaskItem = ({ tache, onDelete, onToggle }: Props) => {
             {tache.statut}
           </span>
         </p>
+
+        <button
+          onClick={() => onChangeStatut(tache.id)}
+          className="btn btn-sm btn-info btn-soft"
+        >
+          Avancer
+        </button>
 
         <button
           onClick={onDelete}

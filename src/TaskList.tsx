@@ -5,19 +5,20 @@ type Statut = "A faire" | "En cours" | "Terminé";
 
 type Tache = {
   id: number;
-  text: string;
+  input: string;
   statut: Statut;
   description: string;
-  bought: boolean;
+  task: boolean;
 };
 
 type Props = {
   taches: Tache[]; 
   onDelete: (id: number) => void;
   onToggle: (id: number) => void;
+  onChangeStatut: (id: number) => void; 
 };
 
-const TaskList = ({ taches, onDelete, onToggle }: Props) => {
+const TaskList = ({ taches, onDelete, onToggle, onChangeStatut }: Props) => {
 
   if (taches.length === 0) {
     return <p className="text-center text-gray-500 mt-5">Aucune tâche</p>
@@ -43,9 +44,10 @@ const TaskList = ({ taches, onDelete, onToggle }: Props) => {
               {group.items.map((tache) => (
                 <TaskItem
                   key={tache.id}
-                  tache={tache}
+                  tache={tache} 
                   onToggle={onToggle}
-                  onDelete={() => onDelete(tache.id)} 
+                  onDelete={() => onDelete(tache.id)}
+                  onChangeStatut={onChangeStatut}
                 />
               ))}
             </ul>

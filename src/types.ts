@@ -2,10 +2,10 @@ export type Statut = "A faire" | "En cours" | "Terminé";
 
 export type Tache = {
   id: number;
-  text: string;
+  input: string;
   statut: Statut;
   description: string;
-  bought: boolean;
+  task: boolean;
 };
 export type Filtre = ["Tous", "A faire", "En cours", "Terminé"];
 
@@ -13,7 +13,7 @@ export type Action =
   | {
       type: "AJOUTER";
       payload: {
-        text: string;
+        input: string;
         description: string;
         statut: Statut;
       };
@@ -23,7 +23,7 @@ export type Action =
       payload: { id: number };
     }
   | {
-      type: "TOGGLE_BOUGHT";
+      type: "TOGGLE";
       payload: { id: number };
     }
   | {
