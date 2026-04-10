@@ -13,6 +13,7 @@ type Tache = {
   description: string;
   bought: boolean;
 };
+/*Encore!!!*/
 
 const filtres: Filtre[] = ["Tous", "A faire", "En cours", "Terminé"];
 
@@ -34,7 +35,7 @@ const tachesReducer = (state: Tache[], action: any): Tache[] => {
     case "SUPPRIMER":
       return state.filter((t) => t.id !== action.payload.id);
 
-    case "TOGGLE_ACHETE":
+    case "TOGGLE_ACHETE": /*ACHETE???*/
       return state.map((t) =>
         t.id === action.payload.id ? { ...t, bought: !t.bought } : t
       );

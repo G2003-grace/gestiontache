@@ -9,6 +9,7 @@ type Tache = {
   description: string;
   bought: boolean;
 };
+/*Pourquoi??*/
 
 type Props = {
   tache: Tache;
@@ -19,7 +20,7 @@ type Props = {
 const TaskItem = ({ tache, onDelete, onToggle }: Props) => {
   return (
     <div>
-    
+    {/* Ce bouton est-il correct et à quoi sert ce bouton? */}
       <button onClick={() => onToggle(tache.id)}>
         {tache.bought ? "" : ""}
       </button>

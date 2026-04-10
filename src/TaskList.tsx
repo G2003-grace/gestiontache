@@ -10,6 +10,7 @@ type Tache = {
   description: string;
   bought: boolean;
 };
+/*Pourquoi redéfinir les deux types ci-dessus alors que tu les as définis dans type.ts*/
 
 type Props = {
   taches: Tache[]; 
