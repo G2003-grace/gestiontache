@@ -1,18 +1,13 @@
 import React, { useState } from 'react'
-
+import type { Statut } from "./types"
 type Props = {
   onAjouter: (text: string, description: string, statut: Statut) => void
 }
 
-type Statut = "A faire" | "En cours" | "Terminé";
 
-type Tache = {
-  id: number;
-  input: string;
-  statut: Statut;
-  description: string;
-  task: boolean;
-}
+
+
+
 
 const TaskForm = ({ onAjouter }: Props) => {
   const [input, setInput] = useState("");
@@ -35,7 +30,7 @@ const TaskForm = ({ onAjouter }: Props) => {
   return (
     <div>
       <h1 className="text-3xl font-bold text-center">
-        Tache
+        TACHES
       </h1>
 
       <input

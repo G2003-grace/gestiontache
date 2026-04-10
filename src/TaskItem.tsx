@@ -1,14 +1,6 @@
 import React from 'react'
+import type { Tache, Statut } from "./types"
 
-type Statut = "A faire" | "En cours" | "Terminé";
-
-type Tache = {
-  id: number;
-  input: string;
-  statut: Statut;
-  description: string;
-  task: boolean;
-};
 
 type Props = {
   tache: Tache;

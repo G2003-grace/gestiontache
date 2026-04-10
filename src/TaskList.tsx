@@ -1,15 +1,7 @@
 import React from 'react'
 import TaskItem from './TaskItem';
+import type { Tache, Statut } from "./types"
 
-type Statut = "A faire" | "En cours" | "Terminé";
-
-type Tache = {
-  id: number;
-  input: string;
-  statut: Statut;
-  description: string;
-  task: boolean;
-};
 /*Pourquoi redéfinir les deux types ci-dessus alors que tu les as définis dans type.ts*/
 
 type Props = {

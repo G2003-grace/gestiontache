@@ -2,17 +2,8 @@ import React, { useEffect, useMemo, useReducer } from 'react'
 import TaskForm from './TaskForm'
 import useLocalStorage from './useLocalStorage'
 import TaskList from './TaskList'
+import type { Tache, Action, Filtre, Statut } from "./types"
 
-type Statut = "A faire" | "En cours" | "Terminé";
-type Filtre = "Tous" | Statut;
-
-type Tache = {
-  id: number;
-  input: string;
-  statut: Statut;
-  description: string;
-  task: boolean;
-};
 
 const filtres: Filtre[] = ["Tous", "A faire", "En cours", "Terminé"];
 
