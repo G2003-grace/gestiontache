@@ -37,7 +37,7 @@ const tachesReducer = (state: Tache[], action: any): Tache[] => {
 
         if (t.statut === "A faire") nouveauStatut = "En cours";
         else if (t.statut === "En cours") nouveauStatut = "Terminé";
-        else nouveauStatut = "A faire";
+        else nouveauStatut = "Terminé";
 
         return {
           ...t,
@@ -79,7 +79,7 @@ const App = () => {
   }, [taches, filtre]);
 
   const restants = useMemo(
-    () => taches.filter((t) => t.statut === "En cours").length,
+    () => taches.filter((t) => t.statut === "En cours" ||  t.statut === "A faire" ).length,
     [taches]
   );
 
