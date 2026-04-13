@@ -36,12 +36,14 @@ const TaskItem = ({ tache, onDelete, onToggle, onChangeStatut }: Props) => {
           </span>
         </p>
 
-        <button
-          onClick={() => onChangeStatut(tache.id)}
-          className="btn btn-sm btn-info btn-soft"
-        >
-          Avancer
-        </button>
+       {tache.statut !== "Terminé" && (
+  <button
+    onClick={() => onChangeStatut(tache.id)}
+    className="btn btn-sm btn-info btn-soft"
+  >
+    Avancer
+  </button>
+)}
 
         <button
           onClick={onDelete}
